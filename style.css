@@ -120,6 +120,23 @@ ul {
   padding-left: 1.25rem;
 }
 
+.product-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--peach);
+}
+
+.product-item:last-child {
+  border-bottom: 0;
+}
+
 li + li {
   margin-top: 0.6rem;
 }
@@ -221,6 +238,31 @@ button:hover {
   color: var(--brown);
 }
 
+.products-controls select {
+  max-width: 20rem;
+}
+
+.field-error {
+  display: block;
+  min-height: 1.6rem;
+  color: var(--brown);
+  font-weight: bold;
+}
+
+.field-error:empty {
+  min-height: 0;
+}
+
+#form-message,
+#favorite-status {
+  color: var(--brown);
+  font-weight: bold;
+}
+
+[hidden] {
+  display: none;
+}
+
 footer {
   padding: 1.25rem 1rem;
   background: var(--brown);
@@ -247,6 +289,16 @@ footer p {
   main > section {
     flex: 1 1 calc(50% - 1.5rem);
     min-width: 20rem;
+  }
+
+  .products-controls {
+    flex-basis: 100%;
+  }
+
+  .product-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   main > figure {

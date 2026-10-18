@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery | Contact</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -31,18 +32,20 @@
     <section>
       <h2>Pre-order and Inquiry Form</h2>
       <p>This form demonstrates HTML structure and built-in validation. It does not send information to a bakery because this project has no backend.</p>
-      <form action="#" method="get">
+      <form id="bakery-contact-form" action="#" method="get">
         <fieldset>
           <legend>Contact details</legend>
 
           <p>
             <label for="full-name">Full Name (required)</label><br>
-            <input type="text" id="full-name" name="full-name" required autocomplete="name">
+            <input type="text" id="full-name" name="full-name" required autocomplete="name" aria-describedby="full-name-error">
+            <small class="field-error" id="full-name-error" role="alert"></small>
           </p>
 
           <p>
             <label for="email">Email Address (required)</label><br>
-            <input type="email" id="email" name="email" required autocomplete="email">
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+            <small class="field-error" id="email-error" role="alert"></small>
           </p>
         </fieldset>
 
@@ -66,7 +69,8 @@
 
           <p>
             <label for="item-details">Item Details</label><br>
-            <textarea id="item-details" name="item-details" rows="5" cols="40" placeholder="Describe the items or question"></textarea>
+            <textarea id="item-details" name="item-details" rows="5" cols="40" minlength="10" required placeholder="Describe the items or question" aria-describedby="item-details-error"></textarea>
+            <small class="field-error" id="item-details-error" role="alert"></small>
           </p>
 
           <p>
@@ -76,6 +80,7 @@
         </fieldset>
 
         <p><button type="submit">Check Request</button></p>
+        <p id="form-message" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>

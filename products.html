@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>North Star Bakery | Products</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -19,28 +20,63 @@
     </nav>
   </header>
 
-  <main>
-    <section>
+  <main data-products-page>
+    <section class="products-controls" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading">My Favorites</h2>
+      <p id="favorite-count" aria-live="polite">0 favorites selected.</p>
+      <ul id="favorite-list" aria-label="Selected favorite products">
+        <li>No favorites selected yet.</li>
+      </ul>
+      <p id="favorite-status" role="status" aria-live="polite"></p>
+
+      <label for="category-filter">Show product category</label><br>
+      <select id="category-filter" name="category-filter">
+        <option value="all">All products</option>
+        <option value="breads">Breads</option>
+        <option value="pastries">Pastries</option>
+        <option value="cakes">Cakes</option>
+      </select>
+    </section>
+
+    <section data-product-section data-category="breads">
       <h2>Breads</h2>
-      <ul>
-        <li><strong>Signature loaf</strong> — a crusty, golden everyday loaf. <em>Sample price range: $5–$8.</em></li>
-        <li><strong>Country sourdough</strong> — a tangy loaf with a chewy crumb. <em>Sample price range: $6–$10.</em></li>
+      <ul class="product-list">
+        <li class="product-item" data-product-id="signature-loaf">
+          <span><strong>Signature loaf</strong> — a crusty, golden everyday loaf. <em>Sample price range: $5–$8.</em></span>
+          <button type="button" class="favorite-button" data-product-id="signature-loaf" aria-pressed="false">Add to favorites</button>
+        </li>
+        <li class="product-item" data-product-id="country-sourdough">
+          <span><strong>Country sourdough</strong> — a tangy loaf with a chewy crumb. <em>Sample price range: $6–$10.</em></span>
+          <button type="button" class="favorite-button" data-product-id="country-sourdough" aria-pressed="false">Add to favorites</button>
+        </li>
       </ul>
     </section>
 
-    <section>
+    <section data-product-section data-category="pastries">
       <h2>Pastries</h2>
-      <ul>
-        <li><strong>Seasonal fruit danish</strong> — flaky pastry with a rotating fruit filling. <em>Sample price range: $3–$5.</em></li>
-        <li><strong>Chocolate chip cookie</strong> — a soft-centered cookie with chocolate pieces. <em>Sample price range: $2–$4.</em></li>
+      <ul class="product-list">
+        <li class="product-item" data-product-id="seasonal-fruit-danish">
+          <span><strong>Seasonal fruit danish</strong> — flaky pastry with a rotating fruit filling. <em>Sample price range: $3–$5.</em></span>
+          <button type="button" class="favorite-button" data-product-id="seasonal-fruit-danish" aria-pressed="false">Add to favorites</button>
+        </li>
+        <li class="product-item" data-product-id="chocolate-chip-cookie">
+          <span><strong>Chocolate chip cookie</strong> — a soft-centered cookie with chocolate pieces. <em>Sample price range: $2–$4.</em></span>
+          <button type="button" class="favorite-button" data-product-id="chocolate-chip-cookie" aria-pressed="false">Add to favorites</button>
+        </li>
       </ul>
     </section>
 
-    <section>
+    <section data-product-section data-category="cakes">
       <h2>Cakes</h2>
-      <ul>
-        <li><strong>Celebration cake</strong> — a layered cake for small gatherings. <em>Sample price range: $25–$45.</em></li>
-        <li><strong>Mini tea cake</strong> — a smaller cake for an afternoon treat. <em>Sample price range: $8–$14.</em></li>
+      <ul class="product-list">
+        <li class="product-item" data-product-id="celebration-cake">
+          <span><strong>Celebration cake</strong> — a layered cake for small gatherings. <em>Sample price range: $25–$45.</em></span>
+          <button type="button" class="favorite-button" data-product-id="celebration-cake" aria-pressed="false">Add to favorites</button>
+        </li>
+        <li class="product-item" data-product-id="mini-tea-cake">
+          <span><strong>Mini tea cake</strong> — a smaller cake for an afternoon treat. <em>Sample price range: $8–$14.</em></span>
+          <button type="button" class="favorite-button" data-product-id="mini-tea-cake" aria-pressed="false">Add to favorites</button>
+        </li>
       </ul>
       <p>Prices above are fictional sample ranges for this student project. North Star Bakery does not offer online checkout on this demonstration site.</p>
     </section>
